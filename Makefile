@@ -24,7 +24,7 @@ clean-pyc:
 	find . -name '*~' -exec rm -f {} +
 
 lint:
-	flake8 nameko-cachetools test
+	flake8 nameko_cachetools test
 
 test:
 	py.test
@@ -33,15 +33,15 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source nameko-cachetools setup.py test
+	coverage run --source nameko_cachetools setup.py test
 	coverage report -m
 	coverage html
 	open htmlcov/index.html
 
 docs:
-	rm -f docs/nameko-cachetools.rst
+	rm -f docs/nameko_cachetools.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ nameko-cachetools
+	sphinx-apidoc -o docs/ nameko_cachetools
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html

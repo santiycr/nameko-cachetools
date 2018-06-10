@@ -1,5 +1,5 @@
 """
-Tests for `nameko-cachetools` module.
+Tests for `nameko_cachetools` module.
 """
 import pytest
 from nameko_cachetools import nameko_cachetools

@@ -106,4 +106,4 @@ Tips
 
 To run a subset of tests::
 
-	 $ py.test test/test_nameko-cachetools.py
+	 $ py.test test/test_nameko_cachetools.py
