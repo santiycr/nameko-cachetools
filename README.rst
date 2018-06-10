@@ -71,7 +71,7 @@ a response from the cache is sent instead of hitting the destination service.
 **WARNING**: Do NOT use this for setters, rpcs meant to modify state in the
 target service
 
-args:
+Arguments:
 
 cache
   the cache to use. This should resemble a dict but can be more
