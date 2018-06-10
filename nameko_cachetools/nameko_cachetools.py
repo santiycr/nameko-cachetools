@@ -114,7 +114,7 @@ class CachedMethodProxy(MethodProxy):
     def get_from_cache(self, key):
         if key not in self.cache:
             return False, None
-        return self.cache[key]
+        return True, self.cache[key]
 
     def __call__(self, *args, **kwargs):
         msg = {'args': args, 'kwargs': kwargs}
