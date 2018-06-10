@@ -2,10 +2,10 @@
 Tests for `nameko-cachetools` module.
 """
 import pytest
-from nameko-cachetools import nameko-cachetools
+from nameko_cachetools import nameko_cachetools
 
 
-class TestNameko-cachetools(object):
+class TestNamekoCachetools(object):
 
     @classmethod
     def setup_class(cls):

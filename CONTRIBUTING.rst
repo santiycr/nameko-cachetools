@@ -3,7 +3,7 @@ Contributing
 ============
 
 Contributions are welcome, and they are greatly appreciated! Every
-little bit helps, and credit will always be given. 
+little bit helps, and credit will always be given.
 
 You can contribute in many ways:
 
@@ -36,7 +36,7 @@ is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Nameko Cache Tools could always use more documentation, whether as part of the 
+Nameko Cache Tools could always use more documentation, whether as part of the
 official Nameko Cache Tools docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
@@ -84,7 +84,7 @@ To get tox, just pip install it.
 
 6. Submit a pull request through the GitHub website.
 
-.. _Fork: https://github.com/Nekroze/nameko-cachetools/fork
+.. _Fork: https://github.com/santiycr/nameko-cachetools/fork
 
 Pull Request Guidelines
 -----------------------
@@ -96,7 +96,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 2.6, 2.7, and 3.3, and for PyPy.
-   Check https://travis-ci.org/santiycr/nameko-cachetools 
+   Check https://travis-ci.org/santiycr/nameko-cachetools
    under pull requests for active pull requests or run the ``tox`` command and
    make sure that the tests pass for all supported Python versions.
 

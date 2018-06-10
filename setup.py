@@ -24,7 +24,10 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 setup(
     name='nameko-cachetools',
     version='0.1.0',
-    description='A few tools to cache interactions between your nameko services, increasing resiliency and performance at the expense of consistency, when it makes sense.',
+    description=(
+        'A few tools to cache interactions between your nameko services,'
+        ' increasing resiliency and performance at the expense of consistency,'
+        ' when it makes sense.'),
     long_description=readme + '\n\n' + doclink + '\n\n' + history,
     author='Santiago Suarez Ordonez',
     author_email='santiycr@gmail.com',
@@ -32,9 +35,10 @@ setup(
     packages=[
         'nameko-cachetools',
     ],
-    package_dir={'nameko-cachetools': 'nameko-cachetools'},
+    package_dir={'nameko-cachetools': 'nameko_cachetools'},
     include_package_data=True,
     install_requires=[
+        'nameko>=2.9.0',
     ],
     license='MIT',
     zip_safe=False,
