@@ -33,16 +33,16 @@ setup(
     author_email='santiycr@gmail.com',
     url='https://github.com/santiycr/nameko-cachetools',
     packages=[
-        'nameko-cachetools',
+        'nameko_cachetools',
     ],
-    package_dir={'nameko-cachetools': 'nameko_cachetools'},
+    package_dir={'nameko_cachetools': 'nameko_cachetools'},
     include_package_data=True,
     install_requires=[
         'nameko>=2.9.0',
     ],
     license='MIT',
     zip_safe=False,
-    keywords='nameko-cachetools',
+    keywords='nameko-cachetools nameko cachetools cache rpc',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
