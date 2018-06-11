@@ -8,6 +8,14 @@ Nameko Cache Tools
 .. image:: https://travis-ci.org/santiycr/nameko-cachetools.png?branch=master
     :target: https://travis-ci.org/santiycr/nameko-cachetools
 
+.. image:: https://readthedocs.org/projects/nameko-cachetools/badge/?version=latest
+    :target: https://nameko-cachetools.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+.. image:: https://codecov.io/gh/santiycr/nameko-cachetools/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/santiycr/nameko-cachetools
+
+
 A few tools to cache interactions between your nameko services, increasing
 resiliency and performance at the expense of consistency, when it makes sense.
 
