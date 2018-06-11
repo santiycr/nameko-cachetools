@@ -114,11 +114,11 @@ class CachedMethodProxy(MethodProxy):
     def get_from_cache(self, key):
         if key not in self.cache:
             return False, None
-        return True, self.cache[key]
+        return True, self.cache[key][0]
 
     def __call__(self, *args, **kwargs):
-        msg = {'args': args, 'kwargs': kwargs}
-        args_hash = json.dumps(msg)
+        frozen_kwargs = tuple(sorted(kwargs.iteritems()))
+        args_hash = (tuple(args), frozen_kwargs)
         timeout = None
         incache, cached_response = self.get_from_cache(args_hash)
         if self.use_cache_first and incache:
@@ -141,5 +141,5 @@ class CachedMethodProxy(MethodProxy):
         finally:
             if timeout:
                 timeout.cancel()
-        self.cache[args_hash] = reply
+        self.cache[args_hash] = (reply,)
         return reply
