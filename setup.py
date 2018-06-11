@@ -23,7 +23,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='nameko-cachetools',
-    version='0.5.0',
+    version='1.0.0',
     description=(
         'A few tools to cache interactions between your nameko services,'
         ' increasing resiliency and performance at the expense of consistency,'
