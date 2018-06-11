@@ -20,7 +20,7 @@ A few tools to cache interactions between your nameko services, increasing
 resiliency and performance at the expense of consistency, when it makes sense.
 
 
-To use Nameko Cache Tools in a project::
+To use nameko-cachetools in a project::
 
 
 
@@ -35,9 +35,32 @@ To use Nameko Cache Tools in a project::
 
             @rpc
             def do_something(self, request):
-                # this rpc response will be cached first, then use the different
-                # cache strategies available in CachedRpcProxy or
-                # CacheFirstRpcProxy
+                # this rpc response will be cached, further queries will be
+                # timed and cached values will be returned if not response is
+                # received or an exception is raised at the destination service
+                other_service.do_something('hi')
+
+To use a more advanced cache from the cachetools module::
+
+
+
+        from nameko.rpc import rpc
+        from nameko_cachetools import CachedRpcProxy
+        from cachetools import TTLCache
+
+
+        class Service(object):
+            name = "demo"
+
+            # use a TTL cache that will only hold 1024 different rpc interactions
+            # and expire them afer 30 seconds
+            other_service = CachedRpcProxy('other_service', cache=TTLCache(1024, 30))
+
+            @rpc
+            def do_something(self, request):
+                # this rpc response will be cached. For the next 30 seconds,
+                # further queries will not reach the target service but still
+                # return the cached response
                 other_service.do_something('hi')
 
 
@@ -49,7 +72,7 @@ CachedRpcProxy
 ^^^^^^^^^^^^^^
 
 If a cached version of this request exists, a response from the cache is
-sent instead of hangling forever or raising an exception.
+sent instead of hanging forever or raising an exception.
 
 If a cached version doesn't exist, it will behave like a normal rpc,
 and wait indefinitey for a reply. All successful replies are cached.
@@ -84,4 +107,3 @@ Arguments:
 cache
   the cache to use. This should resemble a dict but can be more
   sophisticated, like the caches provided by the cachetools package.
-
