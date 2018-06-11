@@ -13,4 +13,7 @@ install:
 
 # command to run tests, e.g. python setup.py test
 script:
-  - py.test
+  - pytest -v --cov nameko_cachetools --cov-report term-missing
+
+after_success:
+- codecov

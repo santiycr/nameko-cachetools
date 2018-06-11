@@ -117,8 +117,7 @@ class CachedMethodProxy(MethodProxy):
         return True, self.cache[key][0]
 
     def __call__(self, *args, **kwargs):
-        frozen_kwargs = tuple(sorted(kwargs.iteritems()))
-        args_hash = (tuple(args), frozen_kwargs)
+        args_hash = json.dumps((args, kwargs), sort_keys=True)
         timeout = None
         incache, cached_response = self.get_from_cache(args_hash)
         if self.use_cache_first and incache:

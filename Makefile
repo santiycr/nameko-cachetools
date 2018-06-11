@@ -33,7 +33,7 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source nameko_cachetools setup.py test
+	py.test --cov=nameko_cachetools
 	coverage report -m
 	coverage html
 	open htmlcov/index.html
